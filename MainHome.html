@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+</head>
+<style>
+    body
+    {
+        background-image: url('./pics/outlook.jpg');
+        background-size:cover;
+        background-repeat: no-repeat; 
+    }
+    h1{
+            text-align: center;
+            color: cadetblue;
+            text-decoration: underline;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 2px black;
+            background-color: aqua;
+    }
+    div.menubar
+           {
+            background-color: whitesmoke;
+            text-align: right;
+            height:30px;
+            font-size: 20px;
+           }
+    #clock {
+			font-size: 20px;
+			position: fixed;
+			bottom: 0;right: 0;
+			width: 100px;
+            background-color: chartreuse;
+			text-align:center;
+			border: 2px solid black;
+			border-radius: 50px;
+		}
+</style>
+<body>
+    <marquee>
+        <h1>Hotel Management System</h1>
+    </marquee>
+    <div class="menubar">
+        <a href="./Home.html" target="_blank">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="./Aboutus.html" target="_blank">About Us</a>&nbsp;&nbsp;&nbsp;
+        <a href="./Contact-us.html" target="_blank">Contact Us</a>&nbsp;&nbsp;&nbsp;
+        <a href="./reg2.html" target="_blank">Registration</a>&nbsp;&nbsp;&nbsp;
+        <a href="./signin2.html" target="_blank">Sign Up</a>&nbsp;&nbsp;&nbsp;
+    </div>
+    <marquee direction="left" scrollamount="50">
+        <img src="./hotelpics/2.jpg" width=33% height=500px>
+        <img src="./hotelpics/3.jpg" width=33% height=500px>
+        <img src="./hotelpics/4.jpg" width=33% height=500px>
+        <img src="./hotelpics/5.jpeg" width=33% height=500px>
+        <img src="./hotelpics/6.jpg" width="33%" height=500px>
+        <img src="./hotelpics/7.jpg" width="33%" height=500px>
+        <img src="./hotelpics/8.jpg" width="33%" height=500px>
+        <img src="./hotelpics/10.jpg" width="33%" height=500px>
+        <img src="./hotelpics/11.jpg" width="33%" height=500px>
+        <img src="./hotelpics/12.jpg" width="33%" height=500px>
+    </marquee>
+    <div id="clock";>8:10:45</div>
+
+	<script>
+        
+		setInterval(showTime, 1000);
+		function showTime() 
+		{
+			let time = new Date();
+			let hour = time.getHours();//04
+			let min = time.getMinutes();//24
+			let sec = time.getSeconds();//60
+			am_pm = "AM";
+
+			if (hour > 12) {
+				hour -= 12;
+				am_pm = "PM";
+			}
+			if (hour == 0) {
+				hr = 12;
+				am_pm = "AM";
+			}
+
+			hour = hour < 10 ? "0" + hour : hour;
+			min = min < 10 ? "0" + min : min;
+			sec = sec < 10 ? "0" + sec : sec;
+
+			let currentTime = hour + ":"
+				+ min + ":" + sec + am_pm;
+
+			document.getElementById("clock")
+				.innerHTML = currentTime;
+		}
+
+		showTime();
+	</script>
+</body>
+</html>
